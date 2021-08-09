@@ -12,3 +12,7 @@ data/refcocog
 
 # .pyc
 *.pyc
+*/*/*.pyc
+
+# results
+results/*

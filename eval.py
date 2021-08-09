@@ -32,7 +32,7 @@ def evaluate_files(args, refer, anns2refs_dict):
     for file in os.listdir(args.input_dir):
         infile = osp.join(args.input_dir, file)
         eval_results = evaluate_file(infile, refer, anns2refs_dict)
-        results = results.append(pd.Series(eval_results, name=file))
+        results = results.append(pd.Series(eval_results, name=file.replace('_cleaned_filtered.json', '')))
 
     results.to_csv(osp.join(args.out_dir, args.dataset+'_quality_results.csv'))
 
